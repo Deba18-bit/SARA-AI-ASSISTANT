@@ -9,7 +9,7 @@ from google import genai
 
 r = sr.Recognizer()
 
-client = genai.Client(api_key="AIzaSyBK5qgSmWhwU1tbb1reNjKOsk_XCKbV5Bg")
+client = genai.Client(api_key="YOUR_API_KEY_HERE")
 
 def speak(text):
     clean_text = text.replace('"', '').replace("'", "")
@@ -82,7 +82,7 @@ if __name__ == "__main__":
             pywhatkit.playonyt(video)
             
         # --- 2. APPLE MUSIC COMMANDS ---
-        elif "music" in command:
+        elif "play music" in command:
             song = command.replace("play", "").replace("on apple music", "").replace("on music", "").strip()
             print(f"-> Triggered: Apple Music -> {song}")
             speak(f"Finding {song} on Apple Music.")
